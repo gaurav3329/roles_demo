@@ -1,0 +1,15 @@
+---
+- name: copy config file on target server
+  template:
+    src: abc.j2
+    dest: /path/abc.conf
+
+- name: copy all 10 files on targer server
+  file:
+    src: "{{ item }}"
+    dest: /tmp/
+  with_items:
+    - 1
+    - 2
+    ......
+    - 10
