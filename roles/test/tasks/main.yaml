@@ -13,3 +13,9 @@
     - 2
     ......
     - 10
+- include_tasks:
+  file: windows.yaml
+  when: {{ ansible_distribution }} == 'Windows'
+- include_tasks:
+  file: linux.yaml
+  when: {{ ansible_distribtion }} == "Linux"
